@@ -2,13 +2,12 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Welcome from "./Welcome";
 import Counter from "./Counter";
 import ShowGithubUser from "./ShowGithubUser";
-import GithubUserList from "./GithubUserList"; // Import the new GithubUserList component
+import GithubUserList from "./GithubUserList";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div>
-        {/* Navigation Links */}
         <nav>
           <ul>
             <li>
