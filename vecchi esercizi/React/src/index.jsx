@@ -1,9 +1,12 @@
-import ReactDOM from 'react-dom'
-import { App } from "./App";
-import "./index.scss"
+import React from 'react';
+import ReactDOM from 'react-dom/client'; // Correct import for React 18
+import App from './App.jsx';
+
+const root = ReactDOM.createRoot(document.getElementById('root')); // Create a root
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 
-
-const root = document.querySelector('#root')
-
-ReactDOM.render(<App />,root)

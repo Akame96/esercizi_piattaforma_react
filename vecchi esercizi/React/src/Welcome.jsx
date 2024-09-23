@@ -1,6 +1,6 @@
 import { HelloWorld } from './HelloWorld'
 
-export function Welcome({ name , age }) {
+export default function Welcome({ name , age }) {
 const WelcomeStyle = {
   backgroundColor: name ? 'greenyellow' : 'darkgray',
   color:name ? '#333' : '#fff'
