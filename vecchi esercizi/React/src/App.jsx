@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Welcome from './Welcome';
 import Counter from './Counter';
@@ -16,13 +17,13 @@ const App = () => {
               <Link to="/counter">Counter</Link>
             </li>
             <li>
-              <Link to="/users/Akame">GitHub User:Akame </Link>
+              <Link to="/users/Akame96">GitHub User: Akame</Link>
             </li>
           </ul>
         </nav>
         <Routes>
           <Route path="/" element={<Welcome name="Nunzia" />} />
-          <Route path="/counter" element={<Counter />} />
+          <Route path="/counter" element={<div><p>Not Found</p><Link to='/'>Go Home</Link></div>} />
           <Route path="/users/:username" element={<ShowGithubUser />} />
         </Routes>
       </div>
