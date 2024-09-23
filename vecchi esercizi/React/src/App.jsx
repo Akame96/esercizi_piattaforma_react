@@ -1,13 +1,14 @@
-
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Welcome from './Welcome';
-import Counter from './Counter';
-import ShowGithubUser from './ShowGithubUser';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Welcome from "./Welcome";
+import Counter from "./Counter";
+import ShowGithubUser from "./ShowGithubUser";
+import GithubUserList from "./GithubUserList"; // Import the new GithubUserList component
 
 const App = () => {
   return (
     <BrowserRouter>
       <div>
+        {/* Navigation Links */}
         <nav>
           <ul>
             <li>
@@ -17,14 +18,20 @@ const App = () => {
               <Link to="/counter">Counter</Link>
             </li>
             <li>
-              <Link to="/users/Akame96">GitHub User: Akame</Link>
+              <Link to="/users">GitHub Users</Link>
             </li>
           </ul>
         </nav>
         <Routes>
           <Route path="/" element={<Welcome name="Nunzia" />} />
-          <Route path="/counter" element={<div><p>Not Found</p><Link to='/'>Go Home</Link></div>} />
-          <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="/counter"  element={
+              <div>
+                <p>Not Found</p>
+                <Link to="/">Go Home</Link>
+              </div>} />
+          <Route path="/users" element={<GithubUserList />}>
+            <Route path=":username" element={<ShowGithubUser />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
@@ -32,5 +39,3 @@ const App = () => {
 };
 
 export default App;
-
-
