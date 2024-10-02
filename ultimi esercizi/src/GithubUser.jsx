@@ -3,7 +3,7 @@ import { useState } from "react";
 export function GithubUser() {
   const [username, setUsername] = useState('');
   const [users ,setUsers]= useState([])
-  const [error, setError]= useSate(null)
+  const [error, setError]= useState(null)
 
 
   const handleSubmit = async (event) => {
@@ -29,11 +29,11 @@ export function GithubUser() {
   return (
     <div>
     <form onSubmit={handleSubmit}>
-      <input 
-      value={username} 
+      <input
+      value={username}
       type="text"
       />
-      <button 
+      <button
       type="submit">
       submit
       </button>

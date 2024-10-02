@@ -1,18 +1,23 @@
-import useSWR from "swr"
+import useSWR, { SWRConfig } from "swr";
 
-const fetcher = url => fetch(url).then(response => response.json())
 
-export function useGithubUser(){
-    const {data, error , mutate} = useSWR(`https://api.github.com/users`, fetcher)
+const fetcher = url => fetch(url).then(response => response.json());
 
-    function handleRefreshUsers(){
-        mutate()
+
+export function useGithubUser() {
+    const { data, error, mutate } = useSWR('https://api.github.com/users', fetcher); // Explicitly passing the fetcher
+
+
+    function handleRefreshUsers() {
+        mutate();
     }
 
+    
     return {
-        users:data,
+        users: data,
         error,
         isLoading: !data && !error,
-        onRefresh: handleRefreshUsers
-    }
+        onRefresh: handleRefreshUsers,
+    };
 }
+

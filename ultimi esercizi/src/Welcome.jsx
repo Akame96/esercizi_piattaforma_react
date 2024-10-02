@@ -5,7 +5,7 @@ export function Welcome() {
 
   return (
     <div>
-      <h3>Welcome, {id}!</h3>
+      <h3>Welcome,{id}!</h3>
     </div>
   );
 }
